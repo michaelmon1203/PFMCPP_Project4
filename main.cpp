@@ -8,7 +8,7 @@
  Purpose:  This project will take you through the process of writing a class that wraps a numeric type, beginning with writing simple member functions and ending with a fully templated class with lots of functionality. 
  
  1) write 3 UDTs named FloatType, DoubleType, IntType.
- 
+
  2) give each UDT the following member functions:
         add( lhs, rhs );
         subtract( lhs, rhs );
@@ -35,6 +35,8 @@
 
  6) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
  */
+
+
 
 /*
 your program should generate the following output EXACTLY.
@@ -92,6 +94,108 @@ good to go!
  */
 
 #include <iostream>
+
+struct FloatType 
+{   
+    float add(float, float);
+    float subtract(float, float);
+    float multiply(float, float);
+    float divide(float, float);
+};
+
+float FloatType::add(float lhs, float rhs)
+{
+    return lhs + rhs;
+}
+
+float FloatType::subtract(float lhs, float rhs)
+{
+    return lhs - rhs;
+}
+
+float FloatType::multiply(float lhs, float rhs)
+{
+    return lhs * rhs;
+}
+
+float FloatType::divide(float lhs, float rhs)
+{
+    if(rhs == 0.0f)
+    {
+        std::cout << "" << std::endl;
+        std::cout << "warning, floating point division by zero returns 'inf' !" << std::endl;
+    }
+    return lhs / rhs;
+}
+
+
+struct DoubleType
+{
+    double add( double, double );
+    double subtract( double, double );
+    double multiply( double, double );
+    double divide( double, double );
+};
+
+double DoubleType::add(double lhs, double rhs)
+{
+    return lhs + rhs;
+}
+
+double DoubleType::subtract(double lhs, double rhs)
+{
+    return lhs - rhs;
+}
+
+double DoubleType::multiply(double lhs, double rhs)
+{
+    return lhs * rhs;
+}
+
+double DoubleType::divide(double lhs, double rhs)
+{
+    if(rhs == 0.0)
+    {
+        std::cout << "" << std::endl;
+        std::cout << "warning, floating point division by zero returns 'inf' !" << std::endl;
+    }
+    return lhs / rhs;
+}
+
+struct IntType
+{
+    int add( int, int );
+    int subtract( int, int );
+    int multiply( int, int );
+    int divide( int, int );
+};
+
+int IntType::add(int lhs, int rhs)
+{
+    return lhs + rhs;
+}
+
+int IntType::subtract(int lhs, int rhs)
+{
+    return lhs - rhs;
+}
+
+int IntType::multiply(int lhs, int rhs)
+{
+    return lhs * rhs;
+}
+
+int IntType::divide(int lhs, int rhs)
+{
+    if(rhs == 0)
+    {
+        std::cout << "error, integer division by zero will crash the program!" << std::endl;
+        std::cout << "returning lhs" << std::endl;
+        return lhs;
+    }
+    return lhs / rhs;
+}
+
 int main() 
 {
     FloatType ft;
