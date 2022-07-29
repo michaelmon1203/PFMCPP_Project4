@@ -159,7 +159,7 @@ double DoubleType::divide(double lhs, double rhs)
         std::cout << "" << std::endl;
         std::cout << "warning, floating point division by zero returns 'inf' !" << std::endl;
     }
-        return lhs / rhs;
+    return lhs / rhs;
 }
 
 struct IntType
